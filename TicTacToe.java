@@ -46,10 +46,13 @@ public class TicTacToe extends JPanel
         {
             
             JButton buttonClicked = (JButton)e.getSource(); //get the particular button that was clicked
-            if(alternate%2 == 0)
+            if(alternate%2 == 0 && buttonClicked.getText().equals(""))
                 buttonClicked.setText("X");
-            else
+            else if (alternate%2 != 0 && buttonClicked.getText().equals(""))
                 buttonClicked.setText("O");
+            else {
+            	buttonClicked.setText(buttonClicked.getText());
+            }
             
             if(checkForWin() == true)
             {
